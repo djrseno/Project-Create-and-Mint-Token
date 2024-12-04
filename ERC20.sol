@@ -22,6 +22,7 @@ contract DJRSToken is ERC20, Ownable {
 
     // Custom transfer function
     function transferTokens(address recipient, uint256 amount) external returns (bool) {
+        require(balanceOf(msg.sender) >= amount, "Insufficient balance to transfer");
         return transfer(recipient, amount);
     }
 
