@@ -20,4 +20,9 @@ contract DJRSToken is ERC20, Ownable {
         _burn(msg.sender, amount);
     }
 
+    // Custom transfer function
+    function transferTokens(address recipient, uint256 amount) external returns (bool) {
+        return transfer(recipient, amount);
+    }
+
 }
